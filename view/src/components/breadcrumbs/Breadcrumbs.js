@@ -13,7 +13,6 @@ const Breadcrumbs = ({ data }) => {
                         <li className='breadcrumbs-item'><Link className=' breadcrumbs-link' to={item.link}>{item.name}</Link></li>
                     ))
                 }
-                <p>test</p>
             </ul>
         </div>
     )
