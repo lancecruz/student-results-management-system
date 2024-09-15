@@ -1,0 +1,35 @@
+.navbar {
+    position: fixed;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    height: 60px;
+    top: 0;
+    z-index: 999;
+    background-color: lightgray;
+    /* border-bottom: solid 1px black; */
+    -webkit-box-shadow: 0px 3px 5px 0px rgba(163,163,163,1);
+    -moz-box-shadow: 0px 3px 5px 0px rgba(163,163,163,1);
+    box-shadow: 0px 3px 5px 0px rgba(163,163,163,1);
+}
+
+.navbar-main {
+    flex-basis: 90%;
+    padding-left: 20px;
+}
+
+.navbar-sub {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 40px;
+    flex-basis: 10%;
+}
+
+.btn-log-out {
+    border: none;
+    background-color: inherit;
+}
+
+.btn-log-out:hover {
+    cursor: pointer;
+}

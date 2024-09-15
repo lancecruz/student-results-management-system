@@ -1,0 +1,139 @@
+.classes {
+    position: relative;
+    margin-left: 300px;
+    width: 100%;
+    height: 100%;
+}
+
+.classes-header {
+    background-color: #fff;
+    padding: 10px 20px;
+}
+
+.classes-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    height: 100%;
+    margin: 30px 20px;
+    background-color: #fff;
+    border-radius: 3px;
+}
+
+.classes-table {
+    width: 100%;
+    border: 1px solid black;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.classes-table td, th {
+    padding: 10px;
+    border: 1px solid black;
+}
+
+.class-form {
+    box-sizing: border-box;
+    border-radius: 5px;
+    /* background-color: #701b1b; */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0 0;
+    padding: 10px 3px;
+    max-width: 100%;
+}
+
+.class-form-input {
+    width: 100%;
+    margin: 0;
+    padding: 10px;
+}
+
+.class-form-submit {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.class-form-submit input {
+    background-color: #1e9a4e;
+    padding: 7px 15px;
+    color: #fff;
+}
+
+.class-form-input div {
+    padding: 0;
+    margin: 0;
+}
+
+.class-form-input label {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.class-form-input input {
+    width: 100%;
+    margin: 0;
+    padding: 10px 2%;
+    border: 1px solid green;
+    border-radius: 3px;
+}
+
+.class-form-input select {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    width: 100%;
+    margin: 0;
+    padding: 10px 2%;
+    border: 1px solid green;
+    border-radius: 3px;
+}
+
+.class-form-select {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 10px;
+}
+
+.classes-form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    height: 100%;
+    margin: 30px auto;
+    background-color: #fff;
+    border-radius: 3px;
+    width: 500px;
+}
+
+.container {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0;
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+}
+
+/* .class-form-select label, select {
+    margin: 5px;
+}
+
+table td {
+    border: 1px solid black;
+}
+
+table {
+    border-collapse: collapse;
+} */
