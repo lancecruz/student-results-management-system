@@ -30,10 +30,10 @@ const Classes = () => {
     const totalClasses = useSelector((state) => state.classes.count);
     const dispatch = useDispatch();
     const navigate = useNavigate();
+
+    // Table Variables
     const [sortBy, setSortBy] = useState('class_code');
     const [currentPage, setCurrentPage] = useState(1);
-    const [offset, setOffset] = useState(1);
-    const [totalNumberOfPages, setTotalNumberOfPages] = useState(1);
     const [pages, setPages] = useState([]);
     const [itemsPerPage, setItemsPerPage] = useState(5);
 
@@ -97,6 +97,7 @@ const Classes = () => {
 
     const handleItemsPerPageChange = (e) => {
         setItemsPerPage(e.target.value);
+        setCurrentPage(1);
     };
 
     const handleEdit = (item) => {
@@ -173,14 +174,11 @@ const Classes = () => {
                 </table>
                 <div className='pagination'>
                     {
-                        pages.map(item => 
-                            <PaginationPageNumber onClick={updatePage} pageNumber={item} currentPage={currentPage} />
+                        pages.map((item, index) => 
+                            <PaginationPageNumber onClick={updatePage} pageNumber={item} currentPage={currentPage} key={index} />
                         )
                     }
                 </div>
-            </div>
-            <div>
-
             </div>
         </div>
     )

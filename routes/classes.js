@@ -46,6 +46,29 @@ router.get('/:id', async (req, res, next) => {
     }
 });
 
+router.get('/teacher/:code', async (req, res, next) => {
+    const { page, offset, limit, sortBy } = req.query;
+    const teacherCode = req.params.code.toString();
+    const GET_CLASSES_BY_TEACHER_CODE = `SELECT classes.class_name, classes.class_code, class_schedule.class_day, class_schedule.class_time FROM class_schedule INNER JOIN classes ON classes.id = class_schedule.class_id WHERE class_schedule.teacher_code = $1 ORDER BY ${sortBy} ASC LIMIT ${limit} OFFSET ${offset};`;
+    const CLASSES_BY_TEACHER_CODE_COUNT = `SELECT COUNT(*) FROM classes INNER JOIN class_schedule ON class_schedule.class_id = classes.id INNER JOIN teachers ON class_schedule.teacher_code = teachers.teacher_code WHERE class_schedule.teacher_code = $1`;
+
+    try {
+        const result = await query(GET_CLASSES_BY_TEACHER_CODE, [teacherCode]);
+        const countResult = await query(CLASSES_BY_TEACHER_CODE_COUNT, [teacherCode]);
+
+        let responseData = {
+            classes: result.rows,
+            count: countResult.rows[0].count
+        };
+
+        res.status(200).json(responseData);
+    } catch (error) {
+        throw new Error(error.message);
+    }
+
+    //res.send('Teacher Code: ' + teacherCode);
+});
+
 router.post('/', async (req, res) => {
     let currentDate = new Date();
 

@@ -9,6 +9,8 @@ import Classes from './pages/classes/Classes';
 import MyClasses from './pages/myClasses/MyClasses';
 import AddClass from './pages/classes/AddClass';
 import EditClass from './pages/classes/EditClass';
+import TeacherClasses from './pages/classes/TeacherClasses';
+import StudentClasses from './pages/classes/StudentClasses';
 
 function App() {
     const router = createBrowserRouter([
@@ -25,8 +27,12 @@ function App() {
                     element: <Classes />
                 },
                 {
-                    path: '/classes/:id',
-                    element: <MyClasses />
+                    path: '/classes/teacher/:code',
+                    element: <TeacherClasses />
+                },
+                {
+                    path: '/classes/student/:code',
+                    element: <StudentClasses />
                 },
                 {
                     path: '/classes/add',

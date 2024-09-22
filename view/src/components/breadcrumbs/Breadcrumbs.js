@@ -8,9 +8,9 @@ const Breadcrumbs = ({ data }) => {
             <ul className='breadcrumbs'>
                 {
                     data.map((item, index) => (
-                        index + 1 == data.length ? <li className='breadcrumbs-item'><Link className='breadcrumbs-link breadcrumbs-item-active' to={item.link}>{item.name}</Link></li>
+                        index + 1 == data.length ? <li className='breadcrumbs-item' key={index}><Link className='breadcrumbs-link breadcrumbs-item-active' to={item.link}>{item.name}</Link></li>
                         :
-                        <li className='breadcrumbs-item'><Link className=' breadcrumbs-link' to={item.link}>{item.name}</Link></li>
+                        <li className='breadcrumbs-item' key={index}><Link className=' breadcrumbs-link' to={item.link}>{item.name}</Link></li>
                     ))
                 }
             </ul>

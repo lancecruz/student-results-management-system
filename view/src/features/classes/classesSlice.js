@@ -1,9 +1,12 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { createClass, fetchClasses, deleteClassByID, fetchClassByClassScheduleID, updateClassScheduleByID } from "../../api/classesAPI";
+import { createClass, fetchClasses, deleteClassByID, fetchClassByClassScheduleID, updateClassScheduleByID, fetchClassesByTeacherCode } from "../../api/classesAPI";
+import { formatTimeToString } from '../../utils/commonFunctions';
 
 const initialState = {
     classes: [],
+    teacherClasses: [],
     count: 0,
+    teacherClassesCount: 0,
     classSchedule: {}
 };
 
@@ -22,6 +25,15 @@ export const getClassByClassScheduleID = createAsyncThunk(
     async (classScheduleID) => {
         const classData = await fetchClassByClassScheduleID(classScheduleID);
         return classData;
+    }
+);
+
+export const getClassesByTeacherCode = createAsyncThunk(
+    'classes/getClassesByTeacherCode',
+    async (listData) => {
+        console.log("Get teachers");
+        const classesData = await fetchClassesByTeacherCode(listData);
+        return classesData;
     }
 );
 
@@ -70,8 +82,16 @@ export const classesSlice = createSlice({
                 console.log(action.payload);
                 state.classSchedule = action.payload;
             })
-            .addCase(deleteByID.fulfilled, (state, action) => {
-                
+            .addCase(getClassesByTeacherCode.fulfilled, (state, action) => {
+                state.teacherClasses = action.payload.classes.map((item) => {
+                    return {
+                        class_name: item.class_name,
+                        class_code: item.class_code,
+                        class_day: item.class_day,
+                        class_time: formatTimeToString(item.class_time)
+                    }
+                });
+                state.teacherClassesCount = action.payload.count;
             });
     }
 });

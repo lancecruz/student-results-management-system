@@ -3,7 +3,9 @@ import './MyClasses.css'
 
 const MyClasses = () => {
     return (
-        <div>MyClasses</div>
+        <div>
+            MyClasses
+        </div>
     )
 }
 

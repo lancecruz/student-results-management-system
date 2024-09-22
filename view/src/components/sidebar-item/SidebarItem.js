@@ -65,8 +65,8 @@ const SidebarItem = ({ name, icon, link, children }) => {
                         <div className='sidebar-item-child'>
                             {
                                 isSubMenuOpen === true ? 
-                                    children.map(item => 
-                                        <div className='sidebar-item-child-title' onClick={() => onClick(item.link)} >
+                                    children.map((item, index) => 
+                                        <div className='sidebar-item-child-title' onClick={() => onClick(item.link)} key={index} >
                                             <div className='sidebar-title'>
                                                 {item.icon}
                                                 <h3>{item.title}</h3>

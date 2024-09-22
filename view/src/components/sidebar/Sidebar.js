@@ -22,7 +22,7 @@ const sidebarMenu = [
             {
                 title: "My Classes",
                 icon: <FAIcons.FaAccusoft/>,
-                link: "/classes/12345"
+                link: "/classes/teacher/1"
             },
             {
                 title: "Add Class",
@@ -34,7 +34,23 @@ const sidebarMenu = [
     {
         title: "Students",
         icon: <FAIcons.FaAccessibleIcon/>,
-        link: '/students'
+        children: [
+            {
+                title: "All Students",
+                icon: <FAIcons.FaAccusoft/>,
+                link: "/students"
+            },
+            {
+                title: "My Students",
+                icon: <FAIcons.FaAccusoft/>,
+                link: "/students/teacher/1"
+            },
+            {
+                title: "Add Student",
+                icon: <FAIcons.FaAccusoft/>,
+                link: "/students/add"
+            }
+        ]
     },
     {
         title: "Teachers",

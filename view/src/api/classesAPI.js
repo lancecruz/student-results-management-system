@@ -17,6 +17,14 @@ export const fetchClassByClassScheduleID = async (classScheduleID) => {
     }
 };
 
+export const fetchClassesByTeacherCode = async (listData) => {
+    const response = await fetch(`http://localhost:9000/classes/teacher/${listData.teacherCode}?page=${listData.page}&offset=${listData.offset}&limit=${listData.itemsPerPage}&sortBy=${listData.sortBy}`);
+    if (response.ok) {
+        const responseData = await response.json();
+        return responseData;
+    }
+};
+
 export const createClass = async (classData) => {
     const response = await fetch('http://localhost:9000/classes', {
         method: 'POST',

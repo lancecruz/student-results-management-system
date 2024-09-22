@@ -10,6 +10,7 @@ var usersRouter = require('./routes/users');
 var loginRouter = require('./routes/login');
 var classesRouter = require('./routes/classes');
 var teachersRouter = require('./routes/teachers');
+const studentsRouter = require('./routes/students');
 
 var app = express();
 var test = "poop";
@@ -32,6 +33,7 @@ app.use('/users', usersRouter);
 app.use('/login', loginRouter);
 app.use('/classes', classesRouter);
 app.use('/teachers', teachersRouter);
+app.use('/students', studentsRouter);
 
 console.log("routes");
 
