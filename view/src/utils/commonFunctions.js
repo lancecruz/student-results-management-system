@@ -13,3 +13,7 @@ export const formatTimeToString = (time) => {
         return '';
     }   
 };
+
+export const validateEmail = (email) => {
+    alert(email);
+};

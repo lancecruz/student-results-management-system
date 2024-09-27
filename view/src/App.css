@@ -149,3 +149,113 @@ tr:nth-child(even) {
 .readonly {
     background-color: #d9d9d9;
 }
+
+/* Basic Page Style */
+.page-container {
+    position: relative;
+    margin-left: 300px;
+    width: 100%;
+    height: 100%;
+}
+
+.page-header {
+    background-color: #fff;
+    padding: 10px 20px;
+}
+
+.page-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    height: 100%;
+    margin: 30px 20px;
+    background-color: #fff;
+    border-radius: 3px;
+}
+
+.page-content-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    height: 100%;
+    margin: 30px auto;
+    background-color: #fff;
+    border-radius: 3px;
+    width: 500px;
+}
+
+.page-content-header {
+    text-align: center;
+    background-color: rgb(83, 179, 91);
+    color: #fff;
+}
+
+/* Form Styles */
+.form {
+    box-sizing: border-box;
+    border-radius: 5px;
+    /* background-color: #701b1b; */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0 0;
+    padding: 20px 13px;
+    max-width: 100%;
+}
+
+.form-input {
+    width: 100%;
+    margin: 0;
+    padding: 10px;
+}
+
+.form-input-submit { 
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.form-input input {
+    width: 100%;
+    margin: 0;
+    padding: 10px 2%;
+    border: 1px solid green;
+    border-radius: 3px;
+}
+
+.form-input label {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.form-input select {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    width: 100%;
+    margin: 0;
+    padding: 10px 2%;
+    border: 1px solid green;
+    border-radius: 3px;
+}
+
+/* Input Styles */
+input[type=submit] {
+    font-size: 1rem;
+    width: 75%;
+    display: flex;
+    justify-content: center;
+    border-radius: 5px;
+    background-color: #1e9a4e;
+    padding: 7px 15px;
+    color: #fff;
+}
+
+input[type=submit]:hover {
+    cursor: pointer;
+    background-color: #1c9149;
+}

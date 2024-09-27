@@ -11,6 +11,8 @@ import AddClass from './pages/classes/AddClass';
 import EditClass from './pages/classes/EditClass';
 import TeacherClasses from './pages/classes/TeacherClasses';
 import StudentClasses from './pages/classes/StudentClasses';
+import Students from './pages/students/Students';
+import AddStudent from './pages/students/AddStudent';
 
 function App() {
     const router = createBrowserRouter([
@@ -41,6 +43,14 @@ function App() {
                 {
                     path: '/classes/edit/:id',
                     element: <EditClass />
+                },
+                {
+                    path: '/students',
+                    element: <Students />
+                },
+                {
+                    path: '/students/add',
+                    element: <AddStudent />
                 }
             ]
         },
