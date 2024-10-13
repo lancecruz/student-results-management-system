@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-import StudentLogin from './pages/login/studentLogin';
+import StudentLogin from './pages/login/StudentLogin';
 import TeacherLogin from './pages/login/TeacherLogin';
 import Dashboard from './pages/dashboard/Dashboard';
 import Root from './components/root/Root';
@@ -13,6 +13,7 @@ import TeacherClasses from './pages/classes/TeacherClasses';
 import StudentClasses from './pages/classes/StudentClasses';
 import Students from './pages/students/Students';
 import AddStudent from './pages/students/AddStudent';
+import Login from './pages/login/Login';
 
 function App() {
     const router = createBrowserRouter([
@@ -55,6 +56,10 @@ function App() {
             ]
         },
         {
+            path: '/login',
+            element: <Login />
+        },
+        {
             path: '/login/student',
             element: <StudentLogin />
         },
@@ -62,6 +67,10 @@ function App() {
             path: '/login/teacher',
             element: <TeacherLogin />
         },
+        {
+            path: '/login/admin',
+            element: <StudentLogin />
+        }
     ]);
 
     return (

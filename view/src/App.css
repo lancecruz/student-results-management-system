@@ -48,6 +48,24 @@
     align-content: center;
 }
 
+.col-1 {
+    width: 40%;
+}
+
+.col-2 {
+    width: 60%;
+}
+
+.content-center {
+    justify-content: center;
+    align-items: center;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+}
+
 .dropdown-group {
     margin: 10px 5px;
     flex-basis: 30%;

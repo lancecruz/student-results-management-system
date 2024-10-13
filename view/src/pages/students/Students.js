@@ -1,5 +1,6 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Breadcrumbs from '../../components/breadcrumbs/Breadcrumbs';
+import DataTable from '../../components/dataTable/DataTable';
 
 const breadcrumbData = [
     {
@@ -13,7 +14,7 @@ const breadcrumbData = [
 ];
 
 const Students = () => {
-    
+    const [students, setStudents] = useState([]);
 
     useEffect(() => {
 
@@ -26,7 +27,7 @@ const Students = () => {
                 <Breadcrumbs data={breadcrumbData} />
             </div>
             <div className='page-content'>
-
+                <DataTable data={students} />
             </div>
         </div>
     );

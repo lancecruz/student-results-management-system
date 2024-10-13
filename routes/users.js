@@ -7,4 +7,12 @@ router.get('/', function(req, res, next) {
     res.send('respond with a resource');
 });
 
+router.post('/teacher', (req, res, next) => {
+    try {
+            
+    } catch (error) {
+        throw new Error(error.message);
+    }
+});
+
 module.exports = router;

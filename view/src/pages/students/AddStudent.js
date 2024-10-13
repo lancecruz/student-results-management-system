@@ -3,6 +3,8 @@ import Breadcrumbs from '../../components/breadcrumbs/Breadcrumbs';
 import { validateEmail } from '../../utils/commonFunctions';
 import { useDispatch } from 'react-redux';
 import { addStudent } from '../../features/students/studentsSlice';
+import { student } from '../../model/student';
+import { useNavigate } from 'react-router';
 
 const breadcrumbData = [
     {
@@ -21,6 +23,7 @@ const breadcrumbData = [
 
 const AddStudent = () => {
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [email, setEmail] = useState('');
@@ -31,17 +34,13 @@ const AddStudent = () => {
     //     validateEmail(email);
     // }, [email]);
 
-    useEffect(() => {
-        generateStudentCode();
-    }, []);
-
-    const generateStudentCode = () => {
-
-    };
-
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        dispatch(addStudent());
+
+        let studentData = new student(firstName, lastName, email, password);
+        dispatch(addStudent(studentData));
+        alert('Student added successfully!');
+        navigate('/students');
     };
 
     return (
